@@ -968,7 +968,37 @@ enum TOperator {
     EOpRayQueryGetIntersectionObjectToWorld,
     EOpRayQueryGetIntersectionWorldToObject,
 
+    // 
+    // GL_NV_shader_execution_reorder
     //
+
+    EOpHitObjectTraceRayNV,
+    EOpHitObjectTraceRayMotionNV,
+    EOpHitObjectRecordHitNV,
+    EOpHitObjectRecordHitWithIndexNV,
+    EOpHitObjectRecordMissNV,
+    EOpHitObjectRecordEmptyNV,
+    EOpHitObjectExecuteShaderNV,
+    EOpHitObjectIsEmptyNV,
+    EOpHitObjectIsMissNV,
+    EOpHitObjectIsHitNV,
+    EOpHitObjectGetRayTMinNV,
+    EOpHitObjectGetRayTMaxNV,
+    EOpHitObjectGetObjectRayOriginNV,
+    EOpHitObjectGetObjectRayDirectionNV,
+    EOpHitObjectGetWorldRayOriginNV,
+    EOpHitObjectGetWorldRayDirectionNV,
+    EOpHitObjectGetInstanceCustomIndexNV,
+    EOpHitObjectGetInstanceIdNV,
+    EOpHitObjectGetGeometryIndexNV,
+    EOpHitObjectGetPrimitiveIndexNV,
+    EOpHitObjectGetHitKindNV,
+    EOpHitObjectGetShaderBindingTableRecordIndexNV,
+    EOpHitObjectGetShaderRecordBufferHandleNV,
+    EOpHitObjectGetAttributesNV,
+    EOpHitObjectGetCurrentTimeNV,
+    EOpReorderThreadNV,
+
     // HLSL operations
     //
 
