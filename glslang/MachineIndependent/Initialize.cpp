@@ -4628,6 +4628,8 @@ void TBuiltIns::initialize(int version, EProfile profile, const SpvVersion& spvV
             "vec3 hitObjectGetWorldRayDirectionNV(hitObjectNV);"
             "vec3 hitObjectGetObjectRayOriginNV(hitObjectNV);"
             "vec3 hitObjectGetObjectRayDirectionNV(hitObjectNV);"
+            "mat4x3 hitObjectGetWorldToObjectNV(hitObjectNV);"
+            "mat4x3 hitObjectGetObjectToWorldNV(hitObjectNV);"
             "int hitObjectGetInstanceCustomIndexNV(hitObjectNV);"
             "int hitObjectGetInstanceIdNV(hitObjectNV);"
             "int hitObjectGetGeometryIndexNV(hitObjectNV);"
@@ -4671,6 +4673,8 @@ void TBuiltIns::initialize(int version, EProfile profile, const SpvVersion& spvV
             "vec3 hitObjectGetWorldRayDirectionNV(hitObjectNV);"
             "vec3 hitObjectGetObjectRayOriginNV(hitObjectNV);"
             "vec3 hitObjectGetObjectRayDirectionNV(hitObjectNV);"
+            "mat4x3 hitObjectGetWorldToObjectNV(hitObjectNV);"
+            "mat4x3 hitObjectGetObjectToWorldNV(hitObjectNV);"
             "int hitObjectGetInstanceCustomIndexNV(hitObjectNV);"
             "int hitObjectGetInstanceIdNV(hitObjectNV);"
             "int hitObjectGetGeometryIndexNV(hitObjectNV);"
@@ -4703,6 +4707,8 @@ void TBuiltIns::initialize(int version, EProfile profile, const SpvVersion& spvV
             "vec3 hitObjectGetWorldRayDirectionNV(hitObjectNV);"
             "vec3 hitObjectGetObjectRayOriginNV(hitObjectNV);"
             "vec3 hitObjectGetObjectRayDirectionNV(hitObjectNV);"
+            "mat4x3 hitObjectGetWorldToObjectNV(hitObjectNV);"
+            "mat4x3 hitObjectGetObjectToWorldNV(hitObjectNV);"
             "int hitObjectGetInstanceCustomIndexNV(hitObjectNV);"
             "int hitObjectGetInstanceIdNV(hitObjectNV);"
             "int hitObjectGetGeometryIndexNV(hitObjectNV);"
@@ -8946,6 +8952,8 @@ void TBuiltIns::identifyBuiltIns(int version, EProfile profile, const SpvVersion
             symbolTable.setFunctionExtensions("hitObjectGetObjectRayDirectionNV", 1, &E_GL_NV_shader_execution_reorder);
             symbolTable.setFunctionExtensions("hitObjectGetWorldRayOriginNV", 1, &E_GL_NV_shader_execution_reorder);
             symbolTable.setFunctionExtensions("hitObjectGetWorldRayDirectionNV", 1, &E_GL_NV_shader_execution_reorder);
+            symbolTable.setFunctionExtensions("hitObjectGetWorldToObjectNV", 1, &E_GL_NV_shader_execution_reorder);
+            symbolTable.setFunctionExtensions("hitObjectGetbjectToWorldNV", 1, &E_GL_NV_shader_execution_reorder);
             symbolTable.setFunctionExtensions("hitObjectGetInstanceCustomIndexNV", 1, &E_GL_NV_shader_execution_reorder);
             symbolTable.setFunctionExtensions("hitObjectGetInstanceIdNV", 1, &E_GL_NV_shader_execution_reorder);
             symbolTable.setFunctionExtensions("hitObjectGetGeometryIndexNV", 1, &E_GL_NV_shader_execution_reorder);
@@ -9938,6 +9946,8 @@ void TBuiltIns::identifyBuiltIns(int version, EProfile profile, const SpvVersion
             symbolTable.relateToOperator("hitObjectGetObjectRayDirectionNV", EOpHitObjectGetObjectRayDirectionNV);
             symbolTable.relateToOperator("hitObjectGetWorldRayOriginNV", EOpHitObjectGetWorldRayOriginNV);
             symbolTable.relateToOperator("hitObjectGetWorldRayDirectionNV", EOpHitObjectGetWorldRayDirectionNV);
+            symbolTable.relateToOperator("hitObjectGetWorldToObjectNV", EOpHitObjectGetWorldToObjectNV);
+            symbolTable.relateToOperator("hitObjectGetObjectToWorldNV", EOpHitObjectGetObjectToWorldNV);
             symbolTable.relateToOperator("hitObjectGetInstanceCustomIndexNV", EOpHitObjectGetInstanceCustomIndexNV);
             symbolTable.relateToOperator("hitObjectGetInstanceIdNV", EOpHitObjectGetInstanceIdNV);
             symbolTable.relateToOperator("hitObjectGetGeometryIndexNV", EOpHitObjectGetGeometryIndexNV);

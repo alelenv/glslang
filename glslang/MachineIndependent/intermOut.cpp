@@ -1121,6 +1121,8 @@ bool TOutputTraverser::visitAggregate(TVisit /* visit */, TIntermAggregate* node
     case EOpHitObjectGetObjectRayDirectionNV: out.debug << "HitObjectGetObjectRayDirectionNV"; break;
     case EOpHitObjectGetWorldRayOriginNV: out.debug << "HitObjectGetWorldRayOriginNV"; break;
     case EOpHitObjectGetWorldRayDirectionNV: out.debug << "HitObjectGetWorldRayDirectionNV"; break;
+    case EOpHitObjectGetObjectToWorldNV: out.debug << "HitObjectGetObjectToWorldNV"; break;
+    case EOpHitObjectGetWorldToObjectNV: out.debug << "HitObjectGetWorldToObjectNV"; break;
     case EOpHitObjectGetInstanceCustomIndexNV: out.debug<< "HitObjectGetInstanceCustomIndexNV"; break;
     case EOpHitObjectGetInstanceIdNV: out.debug << "HitObjectGetInstaneIdNV"; break;
     case EOpHitObjectGetGeometryIndexNV: out.debug << "HitObjectGetGeometryIndexNV"; break;

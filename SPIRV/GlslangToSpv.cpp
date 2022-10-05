@@ -2575,6 +2575,8 @@ bool TGlslangToSpvTraverser::visitUnary(glslang::TVisit /* visit */, glslang::TI
             case glslang::EOpHitObjectGetObjectRayOriginNV:
             case glslang::EOpHitObjectGetWorldRayDirectionNV:
             case glslang::EOpHitObjectGetWorldRayOriginNV:
+            case glslang::EOpHitObjectGetWorldToObjectNV:
+            case glslang::EOpHitObjectGetObjectToWorldNV:
             case glslang::EOpHitObjectGetRayTMaxNV:
             case glslang::EOpHitObjectGetRayTMinNV:
             case glslang::EOpHitObjectIsEmptyNV:
@@ -3257,6 +3259,8 @@ bool TGlslangToSpvTraverser::visitAggregate(glslang::TVisit visit, glslang::TInt
     case glslang::EOpHitObjectGetObjectRayDirectionNV:
     case glslang::EOpHitObjectGetWorldRayOriginNV:
     case glslang::EOpHitObjectGetWorldRayDirectionNV:
+    case glslang::EOpHitObjectGetObjectToWorldNV:
+    case glslang::EOpHitObjectGetWorldToObjectNV:
     case glslang::EOpHitObjectGetInstanceCustomIndexNV:
     case glslang::EOpHitObjectGetInstanceIdNV:
     case glslang::EOpHitObjectGetGeometryIndexNV:
@@ -7004,6 +7008,14 @@ spv::Id TGlslangToSpvTraverser::createUnaryOperation(glslang::TOperator op, OpDe
         unaryOp = spv::OpHitObjectGetWorldRayDirectionNV;
         break;
 
+    case glslang::EOpHitObjectGetObjectToWorldNV:
+        unaryOp = spv::OpHitObjectGetObjectToWorldNV;
+        break;
+
+    case glslang::EOpHitObjectGetWorldToObjectNV:
+        unaryOp = spv::OpHitObjectGetWorldToObjectNV;
+        break;
+
     case glslang::EOpHitObjectGetRayTMinNV:
         unaryOp = spv::OpHitObjectGetRayTMinNV;
         break;
@@ -8838,6 +8850,14 @@ spv::Id TGlslangToSpvTraverser::createMiscOperation(glslang::TOperator op, spv::
     case glslang::EOpHitObjectGetWorldRayDirectionNV:
         typeId = builder.makeVectorType(builder.makeFloatType(32), 3);
         opCode = spv::OpHitObjectGetWorldRayDirectionNV;
+        break;
+    case glslang::EOpHitObjectGetWorldToObjectNV:
+        typeId = builder.makeMatrixType(builder.makeFloatType(32), 4, 3);
+        opCode = spv::OpHitObjectGetWorldToObjectNV;
+        break;
+    case glslang::EOpHitObjectGetObjectToWorldNV:
+        typeId = builder.makeMatrixType(builder.makeFloatType(32), 4, 3);
+        opCode = spv::OpHitObjectGetObjectToWorldNV;
         break;
     case glslang::EOpHitObjectGetInstanceCustomIndexNV:
         typeId = builder.makeIntegerType(32, 1);

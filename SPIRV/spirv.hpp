@@ -1591,6 +1591,8 @@ enum Op {
     OpFragmentMaskFetchAMD = 5011,
     OpFragmentFetchAMD = 5012,
     OpReadClockKHR = 5056,
+    OpHitObjectGetWorldToObjectNV = 5252,
+    OpHitObjectGetObjectToWorldNV = 5253,
     OpHitObjectGetObjectRayDirectionNV = 5254,
     OpHitObjectGetObjectRayOriginNV = 5255,
     OpHitObjectTraceRayMotionNV = 5256,

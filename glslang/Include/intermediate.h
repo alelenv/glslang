@@ -988,6 +988,8 @@ enum TOperator {
     EOpHitObjectGetObjectRayDirectionNV,
     EOpHitObjectGetWorldRayOriginNV,
     EOpHitObjectGetWorldRayDirectionNV,
+    EOpHitObjectGetWorldToObjectNV,
+    EOpHitObjectGetObjectToWorldNV,
     EOpHitObjectGetInstanceCustomIndexNV,
     EOpHitObjectGetInstanceIdNV,
     EOpHitObjectGetGeometryIndexNV,

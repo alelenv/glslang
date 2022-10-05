@@ -1478,6 +1478,8 @@ const char* OpcodeString(int op)
     case OpHitObjectGetObjectRayOriginNV:       return "OpHitObjectGetObjectRayOriginNV";
     case OpHitObjectGetWorldRayDirectionNV:     return "OpHitObjectGetWorldRayDirectionNV";
     case OpHitObjectGetWorldRayOriginNV:        return "OpHitObjectGetWorldRayOriginNV";
+    case OpHitObjectGetWorldToObjectNV:         return "OpHitObjectGetWorldToObjectNV";
+    case OpHitObjectGetObjectToWorldNV:         return "OpHitObjectGetObjectToWorldNV";
     case OpHitObjectGetRayTMaxNV:               return "OpHitObjectGetRayTMaxNV";
     case OpHitObjectGetRayTMinNV:               return "OpHitObjectGetRayTMinNV";
     case OpHitObjectIsEmptyNV:                  return "OpHitObjectIsEmptyNV";
@@ -3107,6 +3109,12 @@ void Parameterize()
 
     InstructionDesc[OpHitObjectGetWorldRayOriginNV].operands.push(OperandId, "'HitObject'");
     InstructionDesc[OpHitObjectGetWorldRayOriginNV].setResultAndType(true, true);
+
+    InstructionDesc[OpHitObjectGetWorldToObjectNV].operands.push(OperandId, "'HitObject'");
+    InstructionDesc[OpHitObjectGetWorldToObjectNV].setResultAndType(true, true);
+
+    InstructionDesc[OpHitObjectGetObjectToWorldNV].operands.push(OperandId, "'HitObject'");
+    InstructionDesc[OpHitObjectGetObjectToWorldNV].setResultAndType(true, true);
 
     InstructionDesc[OpHitObjectGetRayTMaxNV].operands.push(OperandId, "'HitObject'");
     InstructionDesc[OpHitObjectGetRayTMaxNV].setResultAndType(true, true);
