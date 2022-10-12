@@ -21,6 +21,7 @@ void main()
 	hitObjectRecordHitWithIndexNV(hObjHit, as, 1, 1, 1, 2U, 2U, vec3(1), 1.0f, vec3(2), 2.0f, 3);
 	hitObjectRecordEmptyNV(hObjNop);
 	hitObjectRecordMissNV(hObjMiss, 1U, vec3(0.5), 2.0, vec3(1.5), 5.0);
+	hitObjectExecuteShaderNV(hObjHit, 2);
 	if (hitObjectIsHitNV(hObj)) { 
 		op = 1.0f;
 	} else if (hitObjectIsMissNV(hObj)) {
@@ -36,6 +37,8 @@ void main()
 	vec3 dir = hitObjectGetWorldRayDirectionNV(hObjHit);
 	vec3 oorig = hitObjectGetObjectRayOriginNV(hObjHit);
 	vec3 odir = hitObjectGetObjectRayDirectionNV(hObjHit);
+	mat4x3 otw = hitObjectGetObjectToWorldNV(hObjHit);
+	mat4x3 wto = hitObjectGetWorldToObjectNV(hObjHit);
 	int cid = hitObjectGetInstanceCustomIndexNV(hObjMiss);
 	int iid = hitObjectGetInstanceIdNV(hObjNop);
 	int pid = hitObjectGetPrimitiveIndexNV(hObj);

@@ -2385,7 +2385,7 @@ void TParseContext::builtInOpCheck(const TSourceLoc& loc, const TFunction& fnCan
         break;
     case EOpHitObjectRecordHitNV:
         if (!(*argp)[12]->getAsConstantUnion())
-            error(loc, "argument must be compile-time constant", "payload number", "");
+            error(loc, "argument must be compile-time constant", "hitobjectattribute number", "");
         else {
             unsigned int location = (*argp)[12]->getAsConstantUnion()->getAsConstantUnion()->getConstArray()[0].getUConst();
             if (!extensionTurnedOn(E_GL_EXT_spirv_intrinsics) && intermediate.checkLocationRT(2, location) < 0)
@@ -2394,9 +2394,19 @@ void TParseContext::builtInOpCheck(const TSourceLoc& loc, const TFunction& fnCan
         break;
     case EOpHitObjectRecordHitWithIndexNV:
         if (!(*argp)[11]->getAsConstantUnion())
-            error(loc, "argument must be compile-time constant", "payload number", "");
+            error(loc, "argument must be compile-time constant", "hitobjectattribute number", "");
         else {
             unsigned int location = (*argp)[11]->getAsConstantUnion()->getAsConstantUnion()->getConstArray()[0].getUConst();
+            if (!extensionTurnedOn(E_GL_EXT_spirv_intrinsics) && intermediate.checkLocationRT(2, location) < 0)
+                error(loc, "with layout(location =", "no hitObjectAttributeNV declared", "%d)", location);
+        }
+        break;
+
+    case EOpHitObjectGetAttributesNV:
+        if (!(*argp)[1]->getAsConstantUnion())
+            error(loc, "argument must be compile-time constant", "hitobjectattribute number", "");
+        else {
+            unsigned int location = (*argp)[1]->getAsConstantUnion()->getAsConstantUnion()->getConstArray()[0].getUConst();
             if (!extensionTurnedOn(E_GL_EXT_spirv_intrinsics) && intermediate.checkLocationRT(2, location) < 0)
                 error(loc, "with layout(location =", "no hitObjectAttributeNV declared", "%d)", location);
         }
